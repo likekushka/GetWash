@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="styles/fonts.css">
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" media="(max-width: 600px)" href="styles/mobile.css">
+        <script src="scripts/script.js"></script>
         <title>GetWash</title>
     </head>
     <body class="page__body">
@@ -22,23 +23,23 @@
                         <path d="M113.426 6.99759C115.307 6.99759 116.868 7.7124 118.11 9.14202C119.37 10.5716 120 12.321 120 14.3902V19.3562C120 19.7889 119.981 20.1181 119.944 20.3438C119.925 20.5507 119.84 20.7953 119.69 21.0774C119.445 21.5665 118.721 21.811 117.517 21.811C116.37 21.811 115.655 21.5665 115.373 21.0774C115.222 20.7953 115.128 20.5413 115.09 20.3156C115.072 20.0899 115.062 19.7513 115.062 19.2998V14.362C115.062 13.5908 114.846 12.9888 114.413 12.5562C113.981 12.1235 113.426 11.9072 112.748 11.9072C112.09 11.9072 111.507 12.1141 110.999 12.528C110.491 12.923 110.2 13.3744 110.124 13.8823V19.3562C110.124 19.7889 110.106 20.1181 110.068 20.3438C110.049 20.5507 109.964 20.7953 109.814 21.0774C109.569 21.5665 108.845 21.811 107.641 21.811C106.456 21.811 105.732 21.5571 105.469 21.0492C105.337 20.7671 105.252 20.5225 105.215 20.3156C105.196 20.1087 105.187 19.7795 105.187 19.328V2.4548C105.187 2.02216 105.196 1.70237 105.215 1.49545C105.252 1.26973 105.337 1.02519 105.469 0.761835C105.732 0.253945 106.466 0 107.67 0C108.855 0 109.569 0.253945 109.814 0.761835C109.964 1.044 110.049 1.29794 110.068 1.52367C110.106 1.73059 110.124 2.05037 110.124 2.48302V8.71878C111.065 7.57132 112.165 6.99759 113.426 6.99759Z" fill="#446DF6"/>
                     </svg>
                 </div>
-                <nav class="header__nav header-nav">
+                <nav class="header__nav header-nav" id="side-nav">
                     <ul class="header-nav__list list nav-list">
                         <li class="nav__item">
-                            <a class="list__link link" href="#">Как использовать</a>
+                            <a class="header-list__link list__link link" href="#">Как использовать</a>
                         </li>
                         <li class="nav__item">
-                            <a class="list__link link" href="#">Партнерам</a>
+                            <a class="header-list__link list__link link" href="#">Партнерам</a>
                         </li>
                         <li class="nav__item">
-                            <a class="list__link link" href="#">Скачать</a>
+                            <a class="header-list__link list__link link" href="#">Скачать</a>
                         </li>
                         <li class="nav__item">
-                            <a class="list__link link" href="#">Отзывы</a>
+                            <a class="header-list__link list__link link" href="#">Отзывы</a>
                         </li>
                     </ul>
                 </nav>
-                <button class="header__nav-button nav-button button button_tranparent">
+                <button class="header__nav-button nav-button button button_tranparent" id="nav-button" onclick="openNav()">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 12H21" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M3 6H21" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
