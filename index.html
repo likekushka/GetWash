@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/fonts.css">
         <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" media="(max-width: 600px)" href="styles/mobile.css">
+        <link rel="stylesheet" media="(max-width: 480px)" href="styles/mobile.css">
         <script src="scripts/script.js"></script>
         <title>GetWash</title>
     </head>
@@ -25,17 +25,17 @@
                 </div>
                 <nav class="header__nav header-nav" id="side-nav">
                     <ul class="header-nav__list list nav-list">
-                        <li class="nav__item">
-                            <a class="header-list__link list__link link" href="#">Как использовать</a>
+                        <li class="nav__item header-nav__item">
+                            <a class="header-list__link list__link link" href="#start" onclick="closeNav()">Как использовать</a>
                         </li>
-                        <li class="nav__item">
-                            <a class="header-list__link list__link link" href="#">Партнерам</a>
+                        <li class="nav__item header-nav__item">
+                            <a class="header-list__link list__link link" href="#partnership" onclick="closeNav()">Партнерам</a>
                         </li>
-                        <li class="nav__item">
-                            <a class="header-list__link list__link link" href="#">Скачать</a>
+                        <li class="nav__item header-nav__item">
+                            <a class="header-list__link list__link link" href="#apps" onclick="closeNav()">Скачать</a>
                         </li>
-                        <li class="nav__item">
-                            <a class="header-list__link list__link link" href="#">Отзывы</a>
+                        <li class="nav__item header-nav__item">
+                            <a class="header-list__link list__link link" href="#reviews" onclick="closeNav()">Отзывы</a>
                         </li>
                     </ul>
                 </nav>
@@ -44,10 +44,10 @@
                         <path d="M3 12H21" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M3 6H21" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M3 18H21" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    </svg>
                         
                 </button>
-                <button class="header__button button button_tranparent button_size_s button_with-text">Получить доступ</button>
+                <button class="header__button button button_tranparent button_size_s button_with-text" onclick="openForm()">Получить доступ</button>
             </section> 
         </header>
         <main class="page__main main">
@@ -65,12 +65,12 @@
                     <p class="hero__text text">
                         Мы поможем сохранить ваше время для более интересных занятий, чем стоять в очереди.
                     </p>
-                    <button class="hero__button button button_size_m button_blue button_with-text">Получить доступ</button>
+                    <button type="button" class="hero__button button button_size_m button_blue button_with-text" onclick="openForm()">Получить доступ</button>
                     <img src="img/desktop_hero_img.png" alt="" height="605" width="700" class="hero__img img img_desktop">
                     <img src="img/mobile_hero_img.png" height="262" width="320" alt="" class="hero__img img img_mobile">
                 </div>
             </section>
-            <section class="main__start start">
+            <section class="main__start start" id="start">
                <div class="start__container container">
                 <img src="img/desktop_start_img.png" height="625" width="690" alt="" class="start__img img img_desktop">
                 <img src="img/mobile_start_img.png" height="606" width="320" alt="" class="start__img img img_mobile">
@@ -133,7 +133,7 @@
                 </ul>
                </div>
             </section>
-            <section class="main__partnership partnership">
+            <section class="main__partnership partnership" id="partnership">
                 <div class="partnership__container container">
                     <h2 class="partnership__title title">
                         Стань нашим партнером и начни зарабатывать: 
@@ -205,12 +205,12 @@
                             </p>
                         </li>
                     </ul>
-                    <button class="partnership__button button button_size_m button_blue button_with-text">
+                    <button type="button" class="partnership__button button button_size_m button_blue button_with-text" onclick="openForm()">
                         Стать партнером
                     </button>
                 </div>
             </section>
-            <section class="main__apps apps">
+            <section class="main__apps apps" id="apps">
                 <div class="apps__container container">
                     <div class="apps__block">
                         <h2 class="apps__title title">
@@ -232,38 +232,115 @@
                     </div>
                 </div>
             </section>
-            <section class="main__reviews reviews">
+            <section class="main__reviews reviews" id="reviews">
                 <div class="reviews__container container">
                     <h2 class="reviews__title title">
                         Отзывы о приложении
                     </h2>
-                    <blockquote class="reviews__item">
+                    <button type="button" name="previous review button" onclick="prevReview()" class="reviews__button reviews__button_previous button button_size_xs button_circle">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="50" height="50" rx="25" fill="#F7F8FD"/>
+                            <path d="M26.5 20L21.5 25L26.5 30" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> 
+                    </button>
+                    <button type="button" name="next review button" onclick="nextReview()" class="reviews__button reviews__button_next button button_size_xs button_circle">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="50" width="50" height="50" rx="25" transform="rotate(-180 50 50)" fill="#446DF6"/>
+                            <path d="M23.5 30L28.5 25L23.5 20" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                    </button>
+                    <blockquote class="reviews__item fade">
                         <p class="reviews__text text">
-                            Таким образом консультация с широким активом влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. Разнообразный и богатый опыт сложившаяся структура организации обеспечивает широкому кругу специалистов участие в формировании модели развития.
+                            Замечательный сервис! Моя машина выглядит как новая после визита на эту автомойку. Персонал вежливый и профессиональный. Обязательно приеду снова!
                         </p>
-                        <button name="previous review button" class="reviews__button reviews__button_previous button button_size_xs button_circle">
-                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="50" height="50" rx="25" fill="#F7F8FD"/>
-                                <path d="M26.5 20L21.5 25L26.5 30" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg> 
-                        </button>
-                        <button name="next review button" class="reviews__button reviews__button_next button button_size_xs button_circle">
-                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="50" y="50" width="50" height="50" rx="25" transform="rotate(-180 50 50)" fill="#446DF6"/>
-                                <path d="M23.5 30L28.5 25L23.5 20" stroke="#EEEEEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                
-                        </button>
                         <footer class="review__author-data author-data">
-                            <img src="img/author1.png" height="80" width="80" alt="" class="author-data__img">
+                            <img src="img/author2.png" height="80" width="80" alt="" class="author-data__img">
                             <cite class="author-data__name title">
-                                John Doe
+                                Анна Иванова
                             </cite>
                             <p class="author-data__position text">
                                 Водитель
                             </p>
                         </footer>
                     </blockquote>
+                    <blockquote class="reviews__item fade">
+                        <p class="reviews__text text">
+                            Очень доволен качеством мойки. Быстро, аккуратно и по разумной цене. Машину помыли и внутри, и снаружи, придраться не к чему. Рекомендую всем!
+                        </p>
+                        <footer class="review__author-data author-data">
+                            <img src="img/author3.png" height="80" width="80" alt="" class="author-data__img">
+                            <cite class="author-data__name title">
+                                Игорь Петров
+                            </cite>
+                            <p class="author-data__position text">
+                                Водитель
+                            </p>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="reviews__item fade">
+                        <p class="reviews__text text">
+                            Уже несколько лет пользуюсь услугами этой автомойки. Всегда на высоте: чисто, быстро и качественно. Спасибо за отличный сервис!
+                        </p>
+                        <footer class="review__author-data author-data">
+                            <img src="img/author1.png" height="80" width="80" alt="" class="author-data__img">
+                            <cite class="author-data__name title">
+                                Максим Аркомец
+                            </cite>
+                            <p class="author-data__position text">
+                                Грузчик
+                            </p>
+                        </footer>
+                    </blockquote>
+                </div>
+            </section>
+            <section class="main__partners-form partners-form" id="partners-form">
+                <div class="partners-form__container container">
+                    <button class="partners-form__close-button button button_tranparent" id="partners-from__close-button" onclick="closeForm()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#72727E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                            
+                    </button>
+                    <h2 class="partners-form__title title">
+                        Стань нашим партнером и начни зарабатывать: 
+                    </h2>
+                    <form action="" class="partners-form__form form">
+                        <div class="partners-form__input-block input-block">
+                            <svg class="input-block__img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.2209 19.425C20.651 19.425 21 19.7778 21 20.2125C21 20.6472 20.651 21 20.2209 21H13.5963C13.1652 21 12.8172 20.6472 12.8172 20.2125C12.8172 19.7778 13.1652 19.425 13.5963 19.425H20.2209ZM12.1051 4.03845C13.0836 2.77427 14.7977 2.65037 16.1783 3.74341L17.6223 4.88789C18.2528 5.38768 18.6839 6.04497 18.8346 6.74006C19.0029 7.516 18.8169 8.30349 18.312 8.95448L9.70121 20.0591C9.26594 20.6208 8.61148 20.9484 7.90404 20.9579L4.58187 20.9999C4.20997 20.9999 3.89521 20.7479 3.81314 20.3909L3.06103 17.1213C2.90105 16.4251 3.05895 15.7038 3.49526 15.142L4.6255 13.6836C4.8904 13.3413 5.38073 13.2804 5.71938 13.5503C6.05804 13.818 6.11726 14.3136 5.85132 14.6559L4.72107 16.1143C4.57771 16.2991 4.52577 16.5354 4.57875 16.7643L5.18854 19.4165L7.8843 19.3829C8.11596 19.3798 8.33099 19.2727 8.47435 19.0879L17.0852 7.98324C17.3054 7.69975 17.3812 7.39525 17.3127 7.07606C17.2389 6.73901 17.0083 6.40197 16.6613 6.12792L15.2174 4.98239C14.6585 4.54139 13.87 4.3146 13.3319 5.01074L12.1944 6.47652L13.9999 7.94019C14.3354 8.21109 14.3894 8.70773 14.1204 9.04583C13.9666 9.24112 13.7402 9.34192 13.5116 9.34192C13.3413 9.34192 13.1688 9.28522 13.0254 9.16867L11.2335 7.71655L8.28736 11.5164C8.02142 11.8587 7.53214 11.9207 7.19244 11.6498C6.85482 11.382 6.79561 10.8864 7.06051 10.5442L12.1051 4.03845Z" fill="#C0C0C0"/>
+                            </svg>
+                            <input type="text" id="fname" name="fname" placeholder="Введите имя" class="partners-form__input input" required>
+                        </div>
+                        <div class="partners-form__input-block input-block">
+                            <svg class="input-block__img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1973 3C19.398 3.00979 21.9903 5.6212 22 8.84554V10.3069L21.9935 10.4037C21.9467 10.7516 21.6506 11.0198 21.2923 11.0198L21.2835 11.002L21.1721 10.9931C21.0257 10.9696 20.8893 10.9001 20.7831 10.7932C20.6504 10.6595 20.5759 10.4782 20.5759 10.2891V8.84554C20.5519 6.41955 18.6055 4.45879 16.1973 4.43465H7.80274C5.39451 4.45879 3.44811 6.41955 3.42415 8.84554V15.1545C3.44811 17.5805 5.39451 19.5412 7.80274 19.5653H16.1973C18.6055 19.5412 20.5519 17.5805 20.5759 15.1545C20.6163 14.7891 20.923 14.5127 21.2879 14.5127C21.6529 14.5127 21.9595 14.7891 22 15.1545C21.9903 18.3788 19.398 20.9902 16.1973 21H7.80274C4.6 20.9951 2.00487 18.3808 2 15.1545V8.84554C2 5.61714 4.59798 3 7.80274 3H16.1973ZM6.29443 8.38693C6.4807 8.36682 6.66718 8.4229 6.81203 8.54257L10.9695 11.8574C11.4888 12.2679 12.2193 12.2679 12.7386 11.8574L16.8518 8.54257H16.8607L16.9474 8.48292C17.2462 8.30809 17.6345 8.3726 17.8602 8.64951C17.9785 8.798 18.0329 8.988 18.0113 9.17715C17.9897 9.36629 17.8939 9.53888 17.7452 9.65644L13.632 12.9802C12.5862 13.828 11.0954 13.828 10.0495 12.9802L5.92747 9.65644L5.85135 9.58356C5.61891 9.32594 5.59998 8.93 5.82132 8.64951C5.93771 8.50163 6.10817 8.40703 6.29443 8.38693Z" fill="#C0C0C0"/>
+                            </svg>
+                            <input type="email" id="femail" name="femail" placeholder="E-mail" class="partners-form__input input" required autocomplete="on">
+                        </div>
+                        <div class="partners-form__input-block input-block">
+                            <svg class="input-block__img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.30629 10.5849C4.6483 10.353 5.11531 10.4369 5.34931 10.7778C7.94438 14.5448 12.6845 18.7856 15.7006 20.039C16.9206 20.6057 17.8286 20.6407 18.5047 20.1559C19.0317 19.8371 20.5287 18.3499 20.5017 17.5763C20.4927 17.4853 20.3887 17.3144 20.2117 17.1335C19.6357 16.5438 17.7026 15.0815 17.2986 14.9296C16.9796 14.8617 16.6476 15.0556 16.1416 15.3744L15.8856 15.5333C15.5306 15.7462 15.0696 15.6333 14.8556 15.2774C14.6426 14.9236 14.7566 14.4629 15.1116 14.249L15.3426 14.106C15.9026 13.7532 16.6756 13.2715 17.6476 13.4734C18.4136 13.6323 20.8227 15.6133 21.2837 16.084C21.7177 16.5278 21.9577 17.0006 21.9987 17.4873C22.0637 19.3294 19.5967 21.2544 19.3137 21.4163C18.7757 21.8041 18.1446 22 17.4346 22C16.7286 22 15.9446 21.8061 15.0956 21.4103C11.8305 20.055 6.89235 15.6602 4.11428 11.6273C3.87928 11.2865 3.96528 10.8197 4.30629 10.5849ZM6.30267 2.00098L6.47944 2.00375C6.99546 2.04673 7.46747 2.28661 7.91048 2.71838C8.38249 3.17915 10.3645 5.58991 10.5235 6.35252C10.6946 7.1731 10.3255 7.81377 10.0565 8.28153C9.79153 8.7423 9.69952 8.9392 9.79053 9.18807C10.4595 10.8242 11.4936 12.1615 12.8546 13.133C13.1916 13.3749 13.2686 13.8427 13.0276 14.1795C12.8816 14.3834 12.6516 14.4933 12.4176 14.4933C12.2656 14.4933 12.1136 14.4474 11.9816 14.3534C10.3875 13.213 9.17951 11.6568 8.39049 9.72679C8.04348 8.77228 8.45549 8.05665 8.7565 7.53392C8.98251 7.14212 9.10751 6.90824 9.05451 6.65836C8.9145 6.29755 7.45247 4.36754 6.86245 3.79283C6.68045 3.61392 6.50944 3.50898 6.38244 3.49898C5.66642 3.48199 4.20238 4.89727 3.87038 5.44798C3.35536 6.15562 3.39136 7.06216 3.94438 8.27653C4.11538 8.65334 3.94938 9.09711 3.57237 9.26903C3.19436 9.43994 2.75135 9.27502 2.57934 8.89722C1.79232 7.1711 1.80732 5.72984 2.62334 4.61741C2.92735 4.10867 4.8384 1.8968 6.47944 2.00375L6.30267 2.00098Z" fill="#C0C0C0"/>
+                            </svg>                                
+                            <input type="tel" id="fnumber" name="fnumber" placeholder="Номер телефона" pattern="(?:\+7|8)?[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}" class="partners-form__input input" required autocomplete="on">
+                        </div>
+                        <div class="partners-form__checkbox-block checkbox-block">
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="news" class="partners-form__checkbox checkbox">
+                            <label for="vehicle1" class="partners-form__label label">
+                                Я хочу получать новости на почтовый адрес
+                            </label>
+                        </div>
+                        <div class="partners-form__checkbox-block checkbox-block">
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="data" class="partners-form__checkbox checkbox" required>
+                            <label for="vehicle2" class="partners-form__label label" required>Я согласен учавствовать в сборе данных</label>
+                        </div>
+                        <button type="submit" class="partners-form__button button button_size_m button_blue button_with-text">
+                            Получить доступ
+                        </button>
+                    </form>
+                    <p class="partners-form__text text">
+                        Нажимая кнопку Вы принимаете <a href="#">политику конфиденциальности</a> 
+                    </p>
                 </div>
             </section>
         </main>
@@ -283,21 +360,22 @@
                 <nav class="footer__nav nav footer-nav">
                     <ul class="nav-list list footer-nav__list">
                         <li class="nav__item">
-                            <a class="footer-list__link list__link link" href="#">Как использовать</a>
+                            <a class="footer-list__link list__link link" href="#start">Как использовать</a>
                         </li>
                         <li class="nav__item">
-                            <a class="footer-list__link list__link link" href="#">Партнерам</a>
+                            <a class="footer-list__link list__link link" href="#partnership">Партнерам</a>
                         </li>
                         <li class="nav__item">
-                            <a class="footer-list__link list__link link" href="#">Скачать</a>
+                            <a class="footer-list__link list__link link" href="#apps">Скачать</a>
                         </li>
                         <li class="nav__item">
-                            <a class="footer-list__link list__link link" href="#">Отзывы</a>
+                            <a class="footer-list__link list__link link" href="#reviews">Отзывы</a>
                         </li>
                     </ul>
                 </nav>
-                <button class="footer__button button button_tranparent button_size_s button_with-text">Получить доступ</button>
+                <button type="button" class="footer__button button button_tranparent button_size_s button_with-text" onclick="openForm()">Получить доступ</button>
             </section> 
         </footer>
+        <div id="bg_black-transparent" onclick="closeForm()"></div>
     </body>
 </html>
